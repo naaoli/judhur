@@ -49,6 +49,8 @@ Group occurrence information by Word. For the Lemma مُؤْمِن, show separat
 
 Organize the Root around its attested Derived Forms I–X. For every form that occurs, show the Form number, sarf pattern where useful, root-specific meaning or definition, Words and Lemmas derived from it, and Qur'anic occurrences grouped under it.
 
+Show only Derived Forms attested for that Root in the selected corpus; do not render empty Form I–X sections for unattested forms.
+
 For س ل م, example groups are:
 
 | Root Form | Pattern | Example members |
@@ -112,6 +114,8 @@ English gloss search, transliteration search, verse-reference search, complex ra
 An Occurrence is a specific use of a Judhur Word at a corpus location, not the Word identity itself. For Qur'anic occurrences, retain the Surah, Ayah, position or token reference sufficient to distinguish repeated uses within the same Ayah, original Arabic from the source, and associated Judhur Word. Different source spellings can map to one Word under the matching rules. These location details support identity; the user-facing list only needs its total count, ordered Surah/Ayah references, and Quran.com links.
 
 Every occurrence list shows its total number of occurrences at the top and references in Qur'anic text order: ascending Surah number, then Ayah number. This is text order, not an inferred chronology of revelation. Count occurrences, not merely distinct verses; repeated uses within a verse remain separate occurrences. Each reference links to the corresponding verse on Quran.com.
+
+Word occurrence counts follow Judhur's Word identity and matching rules, not raw Arabic surface-string equality. Different surface spellings or attached external clitics count toward the same Word when they resolve to the same Word identity under those rules.
 
 Word View lists every Qur'anic occurrence of the Word. Lemma View groups occurrences by Word, and Root View groups them under their Derived Forms. No internal Ayah page or token inspector is required.
 
@@ -195,3 +199,5 @@ The same experience supports direct Root search, uses persisted data by M2, pres
 4. What frontend, backend, and database stack should Judhur use?
 5. What URL/routing scheme should the Word, Lemma, Root, and occurrence views use?
 6. Which edge cases require refinement of Word identity rules after testing against real Qur'anic data?
+7. Should Word, Lemma, and Root URLs use stable human-readable slugs or opaque/internal IDs?
+8. Should definitions be allowed to vary by source/corpus in the future, or should Judhur maintain one canonical learning definition per entity?
